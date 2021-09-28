@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/cão.png" type="Texture" id=2]
+[ext_resource path="res://boneco.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Enemy.tscn" type="PackedScene" id=4]
+
+[node name="Sala" type="Node2D"]
+position = Vector2( 15.102, 0 )
+scale = Vector2( 0.915842, 0.84058 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color( 0.780392, 0.780392, 0.780392, 1 )
+margin_left = -42.3529
+margin_top = 1.06262
+margin_right = 1279.64
+margin_bottom = 963.063
+texture = ExtResource( 2 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RigidBody2D" parent="." instance=ExtResource( 3 )]
+
+[node name="Enemy" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1032.9, 483.729 )
+rotation = 3.14159
+
+[node name="Enemy2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 213.491, 321.947 )
+rotation = 0.785397
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 649.38, 478.587 )
+
+[node name="RigidBody2D2" type="StaticBody2D" parent="."]
+position = Vector2( 16.8803, 19.8064 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D2"]
+position = Vector2( 618.256, 447.423 )
+rotation = 1.5708
+scale = Vector2( 0.999999, 1 )
+polygon = PoolVector2Array( -465.696, 612.585, -479.175, -642.695, -398.328, -721.022, 538.158, -700.413, 556.13, 713.581, -452.221, 701.218, -434.255, 610.524, 499.985, 647.623, 479.769, -628.27, -429.768, -611.777, -416.289, 567.238 )
